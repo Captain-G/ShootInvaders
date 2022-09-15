@@ -34,7 +34,7 @@ enemy_x = []
 enemy_y = []
 enemy_x_change = []
 enemy_y_change = []
-no_of_enemies = 6
+no_of_enemies = 5
 for i in range(no_of_enemies):
     enemy_img.append(pygame.image.load("enemy.png"))
     enemy_x.append(random.randint(0, 735))
@@ -47,7 +47,7 @@ bullet_image = pygame.image.load("bullet.png")
 bullet_x = 0
 bullet_y = 480
 bullet_x_change = 4
-bullet_y_change = 10
+bullet_y_change = 15
 # ready state - you cant see the bullet on the screen
 # fire state - the bullet is currently moving
 bullet_state = "ready"
@@ -112,9 +112,9 @@ while running:
         # keydown is pressing a key while keyup is releasing that key
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                player_x_change = -5
+                player_x_change = -10
             if event.key == pygame.K_RIGHT:
-                player_x_change = 5
+                player_x_change = 10
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
                     bullet_sound = mixer.Sound("laser.wav")
